@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Member_form_.net5_with_angular11.Models
 {
-    public class AppDbContext
+    public class AppDbContext:DbContext
     {
         private readonly DbContextOptions _options;
         public AppDbContext(DbContextOptions options) : base(options)
