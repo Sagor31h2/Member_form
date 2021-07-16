@@ -21,6 +21,11 @@ export class MemberService {
   putMember() {
     return this.http.put(`${this._baseUrl}/${this.formData.id}`, this.formData);
   }
+
+  deleteMember(id: number) {
+    return this.http.delete(`${this._baseUrl}/${id}`);
+  }
+
   refreshList() {
     this.http.get(this._baseUrl)
       .toPromise()

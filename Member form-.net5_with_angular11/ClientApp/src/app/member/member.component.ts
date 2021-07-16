@@ -20,4 +20,14 @@ export class MemberComponent implements OnInit {
     this.service.formData = Object.assign({}, selectedRecord);
   }
 
+  onDelete(id: number) {
+    this.service.deleteMember(id)
+      .subscribe(
+        res => {
+          this.service.refreshList();
+        },
+        err => { console.log(err) }
+      )
+  }
+
 }

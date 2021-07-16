@@ -17,7 +17,12 @@
         <td (click)="populateForm(row)">{{ row.firstName }}</td>
         <td (click)="populateForm(row)">{{ row.middleName }}</td>
         <td (click)="populateForm(row)">{{ row.lastName }}</td>
-        <td></td>
+        <td>
+          <i
+            class="far fa-trash-alt fa-lg text-danger"
+            (click)="onDelete(row.id)"
+          ></i>
+        </td>
       </tr>
     </tbody>
   </table>
