@@ -1,7 +1,7 @@
 <div class="jumbotron py-2">
   <h1 class="display-4 text-center">Member Form</h1>
 </div>
-<div class="row">
+<div class="col-md-12 row">
   <app-member-form></app-member-form>
   <table class="table">
     <thead>
@@ -14,9 +14,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let row of service.list">
-        <td>{{ row.firstName }}</td>
-        <td>{{ row.middleName }}</td>
-        <td>{{ row.lastName }}</td>
+        <td (click)="populateForm(row)">{{ row.firstName }}</td>
+        <td (click)="populateForm(row)">{{ row.middleName }}</td>
+        <td (click)="populateForm(row)">{{ row.lastName }}</td>
         <td></td>
       </tr>
     </tbody>

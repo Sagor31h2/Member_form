@@ -17,6 +17,10 @@ export class MemberService {
   postMember() {
     return this.http.post(this._baseUrl, this.formData);
   }
+
+  putMember() {
+    return this.http.put(`${this._baseUrl}/${this.formData.id}`, this.formData);
+  }
   refreshList() {
     this.http.get(this._baseUrl)
       .toPromise()
