@@ -1,3 +1,5 @@
+import { Members } from "./member.model";
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +7,15 @@ import { Injectable } from '@angular/core';
 })
 export class MemberService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+
+  }
+  readonly _baseUrl = "http://localhost:13089/api/Member";
+  formData: Members = new Members();
+
+  postMember() {
+    return this.http.post(this._baseUrl, this.formData);
+  }
+
+
 }
